@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: black;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* You can adjust the ratios as needed */
+  width: 75vw;
+  height: 100vh;
+  /* gap: 10px; Add some spacing between columns */
+}
+
+.left-column {
+  /* background-color: lightblue; */
+  background-image: url("images/halie-west-25xggax4bSA-unsplash.jpg"); /* Replace with the URL of your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* padding: 20px; Add some padding to make the content readable */
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  background: rgb(35, 42, 38, 0.6);
+  color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30%;
+  flex-shrink: 0;
+}
+
+.logo img {
+  max-width: 90px;
+  max-height: 90px;
+}
+
+.logo h1 {
+  font-family: "Norse", sans-serif;
+  font-size: 95px;
+}
+
+.footer-left {
+  margin-top: auto;
+  color: aliceblue;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.footer-left a {
+  color: aliceblue;
+  text-decoration-color: aliceblue;
+}
+
+.right-column {
+  background-color: lightgreen;
+}

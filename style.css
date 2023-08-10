@@ -54,7 +54,7 @@ body {
   margin-top: auto;
   color: aliceblue;
   text-align: center;
-  flex-shrink: 0;
+  margin-bottom: 10px;
 }
 
 .footer-left a {

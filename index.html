@@ -30,23 +30,47 @@
       <div class="right-column">
         <div class="upper">Upper</div>
         <!-- <h3>Let's do this!</h3> -->
-        <div class="form-container">
+        <form class="form-container" id="odin-form">
           <div class="form-title"><h3>Let's do this!</h3></div>
           <div class="form-field">
             <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="first-name" required />
+            <input
+              type="text"
+              id="firstName"
+              name="first-name"
+              placeholder="Name *"
+              required
+            />
           </div>
           <div class="form-field">
             <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="last-name" required />
+            <input
+              type="text"
+              id="lastName"
+              name="last-name"
+              placeholder="Last Name *"
+              required
+            />
           </div>
           <div class="form-field">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@yahoo.com *"
+              required
+            />
           </div>
           <div class="form-field">
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="(555)-555-5555 *"
+              required
+            />
           </div>
           <div class="form-field">
             <label for="password">Password</label>
@@ -61,17 +85,26 @@
               required
             />
             <p class="password-match" id="passwordMatchText">
-              Passwords don't match
+              <!-- Passwords don't match -->
             </p>
           </div>
-        </div>
+        </form>
         <div class="lower">
-          <button class="submit-btn" type="submit">Create Account</button>
+          <button
+            class="submit-btn"
+            id="submit-btn"
+            type="submit"
+            form="odin-form"
+            disabled
+          >
+            Create Account
+          </button>
           <div class="existing-usr">
             <p>Already have an account? <a href="#">Log in</a></p>
           </div>
         </div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

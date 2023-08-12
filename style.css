@@ -121,6 +121,14 @@ body {
   box-shadow: 0 0 15px rgb(96, 150, 197);
 }
 
+.form-field input:invalid {
+  border: 1px solid #d55c5f;
+}
+
+.form-field input:valid {
+  border: 1px solid #5cd592;
+}
+
 .password-match {
   color: red;
   font-size: 12px;

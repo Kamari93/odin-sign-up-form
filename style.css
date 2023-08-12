@@ -74,6 +74,23 @@ body {
 .upper {
   /* background: green; */
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.upper p {
+  /* padding-left: 20px; */
+  width: 85%;
+  font-size: large;
+  font-weight: 700;
+}
+
+.content1 {
+  /* padding-top: 50px; */
+  margin-top: 30px;
+  margin-bottom: 30px;
+  /* width: 70px; */
 }
 
 .form-container {
@@ -166,6 +183,7 @@ body {
 .lower {
   /* background: orange; */
   flex: 1;
+  padding-bottom: 30px;
 }
 
 .lower > * {

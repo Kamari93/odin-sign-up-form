@@ -10,7 +10,6 @@ const emailError = document.getElementById('emailError');
 const phoneError = document.getElementById('phoneError');
 const passwordError = document.getElementById('passwordError');
 const passWordMatchText = document.getElementById("passwordMatchText");
-// const formFields = document.querySelectorAll("form-field input");
 const formFields = document.querySelectorAll("input");
 const submitBtn = document.getElementById("submit-btn");
 
@@ -18,6 +17,10 @@ const submitBtn = document.getElementById("submit-btn");
 confirmPasswordInput.addEventListener('input', matchPassword);
 passwordInput.addEventListener('input', clearPasswordMatchText);
 confirmPasswordInput.addEventListener('input', clearPasswordMatchText);
+passwordInput.addEventListener('input', () => {
+    if (confirmPasswordInput.value !== "") matchPassword();
+    if (!confirmPasswordInput.value) passWordMatchText.textContent = '';
+});
 
 
 function matchPassword() {
@@ -42,25 +45,20 @@ function checkValidity() {
     const isValidLastName = lastNameInput.value.length >= 3 || lastNameInput.value === '';
     const isValidEmail = emailInput.value === '' || emailInput.checkValidity();
     const isValidPhone = phoneInput.value === '' || phoneInput.checkValidity();
-    const isValidPassword = passwordInput.value === '' || /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{5,}$/.test(passwordInput.value);
+    const isValidPassword = passwordInput.value === '' || /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{5,}$/.test(passwordInput.value);
     
 
     firstNameError.textContent = isValidFirstName ? '' : 'First name too short';
     lastNameError.textContent = isValidLastName ? '' : 'Last name too short';
     emailError.textContent = isValidEmail ? '' : 'Invalid email format';
     phoneError.textContent = isValidPhone ? '' : 'Invalid number';
-    passwordError.textContent = isValidPassword ? '' : 'Password must be at least 5 characters, <br />include a special character, and a number';
-    // confirmPasswordError.textContent = doPasswordsMatch ? '' : 'Passwords don\'t match';
-
-    // submitButton.disabled = !(isValidFirstName && isValidLastName && isValidEmail && isValidPhone && isValidPassword && doPasswordsMatch);
+    passwordError.textContent = isValidPassword ? '' : 'Must be at least 5 chars, include a special char, and a number';
     }
 
 function clearPasswordMatchText() {
-    if (!passwordInput.value && !confirmPasswordInput.value) {
+    if (!confirmPasswordInput.value) {
         passWordMatchText.textContent = '';
     }};
-
-
 
 formFields.forEach(field => {
     field.addEventListener('focus', () => {

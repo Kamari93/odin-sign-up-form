@@ -28,9 +28,16 @@
         </div>
       </div>
       <div class="right-column">
-        <div class="upper">Upper</div>
+        <div class="upper">
+          <p class="content1">
+            This is not a real online service! You know you need something like
+            this in your life to help you realize your deepest dreams. Sign up
+            <em>now</em> to get started.
+          </p>
+          <p class="content2">You know you want to.</p>
+        </div>
         <!-- <h3>Let's do this!</h3> -->
-        <form class="form-container" id="odin-form">
+        <form class="form-container" id="odin-form" method="get">
           <div class="form-title"><h3>Let's do this!</h3></div>
           <div class="form-field">
             <label for="firstName">First Name *</label>
@@ -86,7 +93,7 @@
               id="password"
               name="password"
               minlength="5"
-              pattern="^(?=.*[0-9])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/])(?=.*[a-zA-Z]).{5,}$"
+              pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{5,}$"
               required
             />
             <p class="error-message" id="passwordError"></p>
@@ -115,7 +122,7 @@
             Create Account
           </button>
           <div class="existing-usr">
-            <p>Already have an account? <a href="#">Log in</a></p>
+            <p>Already have an account? <a href="index.html">Log in</a></p>
           </div>
         </div>
       </div>

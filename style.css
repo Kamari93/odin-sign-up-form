@@ -13,7 +13,7 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* You can adjust the ratios as needed */
+  grid-template-columns: 1fr 2fr; /**You can adjust the ratios as needed*/
   width: 75vw;
   height: 100vh;
   /* gap: 10px; Add some spacing between columns */
@@ -129,6 +129,14 @@ body {
   border: 1px solid #5cd592;
 }
 
+.valid {
+  border: 1px solid #5cd592;
+}
+
+.invalid {
+  border: 1px solid #d55c5f;
+}
+
 .password-match {
   color: red;
   font-size: 12px;
@@ -147,6 +155,12 @@ body {
 
 .password-mismatch {
   border-color: red !important;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
 .lower {

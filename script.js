@@ -1,7 +1,17 @@
+const firstNameInput = document.getElementById('firstName');
+const lastNameInput = document.getElementById('lastName');
+const emailInput = document.getElementById('email');
+const phoneInput = document.getElementById('phone');
 const passwordInput = document.getElementById("password");
 const confirmPasswordInput =  document.getElementById("confirmPassword");
+const firstNameError = document.getElementById('firstNameError');
+const lastNameError = document.getElementById('lastNameError');
+const emailError = document.getElementById('emailError');
+const phoneError = document.getElementById('phoneError');
+const passwordError = document.getElementById('passwordError');
 const passWordMatchText = document.getElementById("passwordMatchText");
-const formFields = document.querySelectorAll("form-field input");
+// const formFields = document.querySelectorAll("form-field input");
+const formFields = document.querySelectorAll("input");
 const submitBtn = document.getElementById("submit-btn");
 
 
@@ -27,6 +37,24 @@ function matchPassword() {
         submitBtn.setAttribute('disabled', 'true');
     };} 
 
+function checkValidity() {
+    const isValidFirstName = firstNameInput.value.length >= 3 || firstNameInput.value === '';
+    const isValidLastName = lastNameInput.value.length >= 3 || lastNameInput.value === '';
+    const isValidEmail = emailInput.value === '' || emailInput.checkValidity();
+    const isValidPhone = phoneInput.value === '' || phoneInput.checkValidity();
+    const isValidPassword = passwordInput.value === '' || /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{5,}$/.test(passwordInput.value);
+    
+
+    firstNameError.textContent = isValidFirstName ? '' : 'First name too short';
+    lastNameError.textContent = isValidLastName ? '' : 'Last name too short';
+    emailError.textContent = isValidEmail ? '' : 'Invalid email format';
+    phoneError.textContent = isValidPhone ? '' : 'Invalid number';
+    passwordError.textContent = isValidPassword ? '' : 'Password must be at least 5 characters, <br />include a special character, and a number';
+    // confirmPasswordError.textContent = doPasswordsMatch ? '' : 'Passwords don\'t match';
+
+    // submitButton.disabled = !(isValidFirstName && isValidLastName && isValidEmail && isValidPhone && isValidPassword && doPasswordsMatch);
+    }
+
 function clearPasswordMatchText() {
     if (!passwordInput.value && !confirmPasswordInput.value) {
         passWordMatchText.textContent = '';
@@ -39,6 +67,11 @@ formFields.forEach(field => {
       field.classList.remove('password-mismatch');
     });
   });
+
+
+formFields.forEach(field => {
+    field.addEventListener('input', checkValidity);
+});
 
 
 // function matchPassword() {
